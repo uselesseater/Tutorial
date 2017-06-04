@@ -1,0 +1,21 @@
+﻿@using System.Configuration
+@model PairingTest.Web.Models.QuestionnaireViewModel
+
+@{
+    var basehref = ConfigurationManager.AppSettings["QuestionnaireServiceUri"];
+}
+<input type="hidden" id="wsbasehref" name="wsbasehref" value="@basehref" />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{questTitle}}</h3>
+    </div>
+    <div class="panel-body" ng-repeat="quest in questions">
+        <label class="col-sm-4 control-label darkblue">{{quest}}</label>
+        <input class="col-sm-4" />
+    </div>
+    <div class="panel-footer">
+        <button class="btn-primary">Submit Questionnaire</button>
+    </div>
+</div>
+
